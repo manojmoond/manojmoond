@@ -13,9 +13,19 @@
       "type": "gift-guide",
       "name": "Gift Guide",
       "settings": {}
+    },
+    "product_image_grid_7nrz4U": {
+      "type": "product-image-grid",
+      "name": "Product image grid",
+      "settings": {
+        "heading": "<p>Tisso vison in the wild</p>",
+        "topPadding": 100,
+        "bottomPadding": 100
+      }
     }
   },
   "order": [
-    "gift_guide_GWTEAm"
+    "gift_guide_GWTEAm",
+    "product_image_grid_7nrz4U"
   ]
 }
