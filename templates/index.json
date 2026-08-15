@@ -17,10 +17,10 @@
     "product_image_grid_7nrz4U": {
       "type": "product-image-grid",
       "blocks": {
-        "product_EWpLFR": {
+        "product_3TfQ7m": {
           "type": "product",
           "settings": {
-            "product": "classic-varsity-top"
+            "product": "dark-denim-top"
           }
         },
         "product_RG3eaQ": {
@@ -55,7 +55,7 @@
         }
       },
       "block_order": [
-        "product_EWpLFR",
+        "product_3TfQ7m",
         "product_RG3eaQ",
         "product_BrfPY3",
         "product_aEtxjc",
