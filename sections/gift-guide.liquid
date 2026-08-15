@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: space-between;
     padding-block: 28px;
+    gap:20px;
    }
    .gift-guide-logo>img{
     max-width:200px;
@@ -23,7 +24,7 @@
    .headBtn{
     display: flex;
     font-weight: 400;
-    font-size: clamp(16px, 4vw, 22px);
+    font-size: clamp(16px, 2vw, 22px);
     line-height: 1.28;
     text-transform: uppercase;
     align-items: center;
@@ -49,7 +50,7 @@
      
    }
    .gift-guide-inner p{
-     font-size: clamp(16px, 4vw, 22px);
+     font-size: clamp(16px, 2vw, 22px);
     line-height: 1.28;
    }
    .giftBanner{
@@ -81,7 +82,7 @@
    .bannerBtn{
     display: flex;
     font-weight: 400;
-    font-size:clamp(16px, 4vw, 22px);
+    font-size:clamp(16px, 2vw, 22px);
    line-height: 1.28;
     text-transform: uppercase;
     align-items: center;
@@ -132,6 +133,12 @@
       display:none;
      }
    }
+   @media screen and (min-width:768px) and (max-width:1080px){
+      .bannerContent{
+        padding-bottom:50px;
+        gap:30px;
+      }
+   }
    @media screen and (max-width:767px){
     .giftBanner {
           position: relative;
@@ -180,7 +187,7 @@
    }
 {% endstyle %}
 
-<section class="gift-guide" id="GiftGuide-{{ section.id }}">
+<div class="gift-guide" id="GiftGuide-{{ section.id }}">
   <div class="gift-guide-head">
     <div class="container">
       <div class="gift-guide-inner">
@@ -244,7 +251,7 @@
       <p class="mobileView">SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>
     </div>
   </div>
-</section>
+</div>
 
 
 

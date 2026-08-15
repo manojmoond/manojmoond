@@ -1,0 +1,619 @@
+
+{% style %}
+    #productImageGrid-{{ section.id }}{
+      padding-block-start:{{  section.settings.topPadding }}px;
+      padding-block-end:{{ section.settings.bottomPadding }}px;
+    }
+    #productImageGrid-{{ section.id }} .container{
+     max-width:1500px;
+     padding-inline:16px;
+     margin-inline:auto;
+     position:relative;
+   }
+    #productImageGrid-{{ section.id }} h2{
+    font-family: Lustria;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    color:#000;
+    margin-bottom:30px;
+   }
+   #productImageGrid-{{ section.id }} .productImageGridInner{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+   #productImageGrid-{{ section.id }} .productImageGridInner>button{
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+   #productImageGrid-{{ section.id }} .productImageGridInner>button img{
+    aspect-ratio:405/415;
+    object-fit: cover;
+  }
+   #productImageGrid-{{ section.id }} .productImageGridInner>button {
+    position:relative;
+  } 
+   #productImageGrid-{{ section.id }} .productImageGridInner>button:before{
+    content:'';
+    position:absolute;
+    inset:0; 
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.2);
+    display:none;
+    transitio:all 0.25sec;
+  }
+    #productImageGrid-{{ section.id }} .productImageGridInner>button:hover:before{
+       display:block
+    }
+    #productImageGrid-{{ section.id }} .productImageGridInner>button span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+   }
+   @media screen and (min-width:768px){
+     #productImageGrid-{{ section.id }} .container{
+       padding-inline:50px;
+     }
+    }
+    @media screen and (max-width:767px){
+      #productImageGrid-{{ section.id }}{
+        padding-block-start:{{ section.settings.topPadding | times:0.4 }}px;
+        padding-block-end:{{ section.settings.topPadding | times:0.4 }}px;
+      }
+       #productImageGrid-{{ section.id }} .productImageGridInner{
+        grid-template-columns:repeat(2, 1fr);
+        gap:4px;
+      }
+      #productImageGrid-{{ section.id }} h2{
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+
+    /*Product popup start here*/
+    .productPopup {
+        position: fixed;
+        z-index: 999;
+        inset: 0;
+        padding:20px;
+        background:rgba(0,0,0,0.5);
+        display:none;
+    }
+    .productPopup.is-open{
+      display:flex;
+    }
+    .productPopup .productPopupContent {
+          max-width: 400px;
+          position:relative;
+          margin: auto;
+      }
+      .productPopup .productPopupInner {
+          background: #fff;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: 2fr 3fr;
+          gap: 20px;
+      }
+      .productPopup .product-popup-close{ 
+        position:absolute;
+        right:10px;
+        top:10px;
+        background: transparent;
+        border:none;
+        cursor:pointer;
+      }
+      .productPopup .productPopupInfo h3{
+       margin:0;
+       font-weight:500;
+       font-size:22px;
+      }
+       .productPopup .productPopupInfo h5{
+         margin:0;
+        font-size: 20px;
+        font-weight: 600;
+      }
+       .productPopup .productPopupInfo p{
+            margin:0;
+            line-height:1.3;
+      }
+    .productPopup .productPopupContent .productPopupImage{
+        max-width:250px;
+        aspect-ratio:405/460;
+          object-fit: cover;
+      }
+      .productPopup .productPopupInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 15px; 
+          padding-top:15px;
+      }
+      .productPopup form{
+        grid-column: 1 / -1;
+      }
+      .productPopup .popupAddCart {
+        width:100%;
+        display: flex; 
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.28;
+        text-transform: uppercase;
+        align-items: center;
+        Background: #000;
+        gap: 20px;
+        padding: 8px 50px;
+        white-space: nowrap;
+        transition: all 0.25s;
+        border: 2px solid #000;
+        color: #fff;
+        justify-content: center;
+        cursor:pointer;
+      }
+      .productPopup .popupAddCart svg {
+        max-width:26px;
+      }
+      .productPopup .popupAddCart svg path{
+       fill:#fff;
+       transition: all 0.25s;
+      }
+     .productPopup .popupAddCart:hover {
+          Background: transparent;
+          color: #000;
+      }
+      .productPopup .popupAddCart:hover svg path{
+         fill:#000;
+      }
+      .productPopupVariants {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-bottom: 50px;
+      }
+      .productPopupOption.Color {
+          order: -1;
+      }
+      .productPopupOption {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          position:relative;
+      }
+      .productPopupOption select{
+        padding: 8px 15px;
+        appearance: none;
+        -webkit-appearance: none;
+        position:relative;
+        cursor:pointer;
+        border-color:#eee;
+      }
+      .productPopupOption.Size::after{
+        content:'';
+        position:absolute;
+        right:19px;
+        bottom:18px;
+        width:8px;
+        height:8px;
+        border-right:1px solid #000;
+        border-bottom:1px solid #000;
+        transform:rotate(45deg);
+      }
+      .productPopupOption select:focus-visible{
+       outline:none;
+      }
+      .colorSwatvhes{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:3px;
+      }
+      .colorSwatch{
+        position:relative;
+        border:1px solid #eee; 
+        background:#fff;
+        padding:12px 20px;
+        cursor:pointer;
+        width:100%;
+      }
+      .colorSwatch:focus-visible{
+       outline:none;
+      }
+      .colorSwatch.is-selected{
+        border-color: #000;
+        
+      }
+      .colorSwatch:after{
+        content:'';
+        position:absolute;
+        left:0;
+        top:0;
+        background:var(--swatch-color);
+        height: 100%;
+        width: 5px;
+      }
+      .colorSwatch[data-option-value="White"]:after{
+        background: #f5f5f5;
+      }
+      .colorSwatch.is-selected{
+        font-weight:600;
+      }
+{% endstyle %}
+
+<div id="productImageGrid-{{ section.id }}">
+    <div class="container">
+        {% if section.settings.heading != blank %}
+         <h2>{{ section.settings.heading | newline_to_br }}</h2>
+        {% endif %} 
+        <div class="productImageGridInner">
+
+          {% for block in section.blocks %}
+            {% assign product = block.settings.product %}
+            {% if product != blank %}
+                <button type="button" data-product-popup="ProductPopup-{{ section.id }}-{{ block.id }}">
+                  <span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_d_5_3060)">
+                      <circle cx="11.8571" cy="8.85714" r="7.85714" fill="#F8F8F8" fill-opacity="0.9"/>
+                      <path d="M12.1045 6.02985V12.0738" stroke="black" stroke-linecap="square" stroke-linejoin="round"/>
+                      <path d="M9.08252 9.05182H15.1265" stroke="black" stroke-linecap="square" stroke-linejoin="round"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_d_5_3060" x="0" y="0" width="23.7144" height="23.7143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="3"/>
+                      <feGaussianBlur stdDeviation="2"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5_3060"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5_3060" result="shape"/>
+                      </filter>
+                      </defs>
+                      </svg>
+                    </span>
+                  {% if product.featured_image %}
+                  {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+                  {% endif %}
+                </button>
+                <div class="productPopup" id="ProductPopup-{{ section.id }}-{{ block.id }}">
+                  <div class="productPopupContent">
+                     <button class="product-popup-close">
+                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 13.9994L13.7279 1.2715" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 1L13.7279 13.7279" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                      </button>
+                      <div class="productPopupInner">
+                        <div class="popupMedia">
+                          {% if product.featured_image %}
+                             {{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', class:'productPopupImage' }}
+                          {% endif %}
+                        </div>
+                        <div class="productPopupInfo">
+                          <h3>{{ product.title }}</h3>
+                          <h5>{{ product.price | money }}</h5>
+                          <p>{{ product.description | strip_html | truncate:200 }}</p>
+                        </div>
+                        {% form 'product', product, class:'productPopupForm', data-product-form:'' %}
+                          {% unless product.has_only_default_variant %}
+                            <div class="productPopupVariants">
+                               {% for option in product.options_with_values %}
+                                <div class="productPopupOption {{ option.name }}">
+                                  <label for="Option-{{ section.id }}-{{ block.id }}-{{ forloop.index }}">
+                                    {{ option.name }}  
+                                  </label>
+                                  {% if option.name == 'Color' %}
+                                    <div class="colorSwatvhes">
+                                      {% for value in option.values %}
+                                        <button type="button" class="colorSwatch"
+                                        data-option-position="{{ option.position }}"
+                                        data-option-value="{{ value | escape }}"
+                                        data-product-id="{{ product.id }}"
+                                        aria-label="{{ value }}"
+                                        style="--swatch-color:{{ value | escape }}"
+                                        >
+                                        {{ value }}
+                                        </button>
+                                      {% endfor %}
+                                    </div>
+                                  {% else %}
+                                  <select id="Option-{{ section.id }}-{{ block.id }}-{{ forloop.index }}" 
+                                    name="options[{{ option.name | escape }}]" data-option-position="{{ option.position }}">
+                                    {% for value in option.values %}
+                                      <option value="{{ value | escape }}" 
+                                      {% if option.selected_value == value %}selected {% endif %}>
+                                        {{ value }}
+                                      </option>
+                                    {% endfor %}
+                                  </select>
+                                {% endif %}
+                                </div>
+                               {% endfor %}
+                            </div>
+                          {% endunless %}
+                          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                            <button type="submit" name="add" class="popupAddCart" 
+                              data-add-to-cart
+                              {% unless product.selected_or_first_available_variant.available %}
+                                  disabled
+                              {% endunless %}
+                              >
+                              {% if product.selected_or_first_available_variant.available %}
+                                Add to cart 
+                              {% else %}
+                                Sold out
+                              {% endif %}
+                                <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+                                </svg>
+                            </button>
+                            <script type="application/json" data-product-variants>
+                              {{ product.variants | json }}
+                            </script>
+                          {% endform %}
+                      </div>
+                </div>
+
+                </div>
+            {% endif %} 
+          {% endfor %}
+
+        </div>
+    </div>
+  </div>
+ {% schema %}
+  {
+    "name": "Product image grid",
+    "tag": "section",
+    "disabled_on": { 
+      "groups": [
+        "header", "footer"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "product",
+        "name": "product",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Select Product"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+       "type": "richtext",
+       "id": "heading",
+       "label": "Heading"
+      },
+      {
+       "type": "header",
+       "content": "Padding"
+      },
+      { 
+        "type": "range",
+        "id": "topPadding",
+        "max": 100,
+        "min": 0,
+        "step": 1,
+        "default": 40,
+        "label": "Top"
+      },
+      { 
+        "type": "range",
+        "id": "bottomPadding",
+        "max": 100,
+        "min": 0,
+        "step": 1,
+        "default": 40,
+        "label": "Bottom"
+      }
+    ],
+    "presets": [
+      {
+       "name": "Product image grid"
+      }
+    ]
+    
+  }
+  {% endschema %}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+     // trigger on product image
+    document.querySelectorAll('.productImageGridInner > button').forEach(trigger => {
+
+      trigger.addEventListener('click', () => {
+ 
+        const popupId = trigger.dataset.productPopup;
+        const popup = document.getElementById(popupId);
+
+        if (!popup) return;
+
+        popup.classList.add('is-open');
+        popup.setAttribute('aria-hidden', 'false');
+
+        document.body.style.overflow = 'hidden';
+      });
+
+    });
+// close btn trigger to hide popup
+    document.querySelectorAll('.product-popup-close').forEach(closeButton => {
+
+      closeButton.addEventListener('click', () => {
+
+        const popup = closeButton.closest('.productPopup');
+
+        if (!popup) return;
+
+        popup.classList.remove('is-open');
+        popup.setAttribute('aria-hidden', 'true');
+
+        document.body.style.overflow = '';
+      });
+
+    });
+// body click hide popup
+    document.querySelectorAll('.productPopup').forEach(popup => {
+
+      popup.addEventListener('click', (event) => {
+
+        if (event.target === popup) {
+
+          popup.classList.remove('is-open');
+          popup.setAttribute('aria-hidden', 'true');
+
+          document.body.style.overflow = '';
+        }
+
+      });
+
+    });
+// Escape popup hide
+    document.addEventListener('keydown', (event) => {
+
+      if (event.key === 'Escape') {
+
+        document.querySelectorAll('.productPopup.is-open').forEach(popup => {
+
+          popup.classList.remove('is-open');
+          popup.setAttribute('aria-hidden', 'true');
+
+        });
+
+        document.body.style.overflow = '';
+      }
+
+    });
+    
+    // Variant selection
+    document.querySelectorAll('.productPopupForm').forEach(form => {
+
+        const variantData = form.querySelector('[data-product-variants]');
+        const variantInput = form.querySelector('input[name="id"]');
+
+        if (!variantData || !variantInput) return;
+
+        const variants = JSON.parse(variantData.textContent);
+
+
+        function updateVariant() {
+
+            const selectedOptions = [];
+
+            // Get Color button value
+            form.querySelectorAll('.colorSwatch.is-selected').forEach(swatch => {
+
+                const position = Number(swatch.dataset.optionPosition);
+
+                selectedOptions[position - 1] = swatch.dataset.optionValue;
+
+            });
+
+
+            // Get Size / other select values
+            form.querySelectorAll('select[data-option-position]').forEach(select => {
+
+                const position = Number(select.dataset.optionPosition);
+
+                selectedOptions[position - 1] = select.value;
+
+            });
+
+
+            console.log('Selected options:', selectedOptions);
+
+
+            const matchedVariant = variants.find(variant => {
+
+                return variant.options.every((optionValue, index) => {
+
+                    return optionValue === selectedOptions[index];
+
+                });
+
+            });
+
+
+            if (matchedVariant) {
+
+                variantInput.value = matchedVariant.id;
+
+                console.log('Selected variant:', matchedVariant);
+                console.log('Variant ID:', matchedVariant.id);
+
+            } else {
+
+                console.log('Variant not found');
+
+            }
+
+        }
+
+        // Color swatch
+
+        form.querySelectorAll('.colorSwatch').forEach(swatch => {
+
+            swatch.addEventListener('click', function() {
+
+                const position = this.dataset.optionPosition;
+
+
+                // Remove selected from same option
+                form.querySelectorAll(
+                    `.colorSwatch[data-option-position="${position}"]`
+                ).forEach(button => {
+
+                    button.classList.remove('is-selected');
+
+                });
+
+
+                // Select clicked color
+                this.classList.add('is-selected');
+
+
+                // Find correct Shopify variant
+                updateVariant();
+
+            });
+
+        });
+
+
+        // Select Options
+
+        form.querySelectorAll('select[data-option-position]').forEach(select => {
+
+            select.addEventListener('change', function() {
+
+                updateVariant();
+
+            });
+
+        });
+
+
+        // Initial color
+
+        const firstColor = form.querySelector('.colorSwatch');
+
+        if (firstColor) {
+            firstColor.classList.add('is-selected');
+        }
+
+
+        // Initial variant
+        updateVariant();
+
+    });
+
+  });
+</script>
