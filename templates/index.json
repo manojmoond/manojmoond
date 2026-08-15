@@ -13,9 +13,65 @@
       "type": "gift-guide",
       "name": "Gift Guide",
       "settings": {}
+    },
+    "product_image_grid_7nrz4U": {
+      "type": "product-image-grid",
+      "blocks": {
+        "product_GRbMze": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag"
+          }
+        },
+        "product_r3K7Ny": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo"
+          }
+        },
+        "product_aEtxjc": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt"
+          }
+        },
+        "product_BrfPY3": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket"
+          }
+        },
+        "product_RG3eaQ": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top"
+          }
+        },
+        "product_3TfQ7m": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top"
+          }
+        }
+      },
+      "block_order": [
+        "product_GRbMze",
+        "product_r3K7Ny",
+        "product_aEtxjc",
+        "product_BrfPY3",
+        "product_RG3eaQ",
+        "product_3TfQ7m"
+      ],
+      "name": "Product image grid",
+      "settings": {
+        "heading": "<p>Tisso vison in the wild</p>",
+        "topPadding": 100,
+        "bottomPadding": 100
+      }
     }
   },
   "order": [
-    "gift_guide_GWTEAm"
+    "gift_guide_GWTEAm",
+    "product_image_grid_7nrz4U"
   ]
 }
