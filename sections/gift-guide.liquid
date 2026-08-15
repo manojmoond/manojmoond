@@ -1,0 +1,278 @@
+{% style %}
+   #GiftGuide-{{ section.id }}{
+      font-family: var(--font-paragraph--family);
+   }
+   #GiftGuide-{{ section.id }} .container{
+     max-width:1700px;
+     padding-inline:16px;
+     margin-inline:auto;
+     position:relative;
+   }
+   .gift-guide-head{ 
+    Background:#F5F5F5;
+   }
+   .gift-guide-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 28px;
+   }
+   .gift-guide-logo>img{
+    max-width:200px;
+   }
+   .headBtn{
+    display: flex;
+    font-weight: 400;
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: 1.28;
+    text-transform: uppercase;
+    align-items: center;
+    Background:#FFF544;
+    gap: 30px;
+    padding:15px 50px;
+    white-space: nowrap;
+    transition:all 0.25s;
+    border:2px solid #FFF544;
+   }
+   .headBtn:hover{
+    Background:transparent;
+    color:#FFF544;
+   }
+  .headBtn:hover svg path{
+     fill:#FFF544;
+  }
+   .headBtn svg path{
+      transition:all 0.25s;
+   }
+   .headBtn svg{
+    max-width:32px;
+     
+   }
+   .gift-guide-inner p{
+     font-size: clamp(16px, 4vw, 22px);
+    line-height: 1.28;
+   }
+   .giftBanner{
+    position:relative;
+   }
+   .bannerContent{
+    display:flex;
+    flex-direction:column;
+    align-items: start;
+    gap:50px;
+    max-width:650px;
+    padding:20px 50px 160px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    Background:#fff;
+   }
+   .giftBanner .bannerContent h1{
+     font-weight:500;
+     font-size:clamp(30px, 5vw, 82px);
+     line-height: 1.28;
+     margin:0;
+   }
+   .giftBanner .bannerContent p{
+    margin:0;
+    font-size:clamp(16px, 4vw, 22px);
+    line-height: 1.28;
+   }
+   a.bannerBtn{
+    display: flex;
+    font-weight: 400;
+    font-size:clamp(16px, 4vw, 22px);
+   line-height: 1.28;
+    text-transform: uppercase;
+    align-items: center;
+    Background:#000;
+    gap: 30px;
+    color:#fff;
+    padding:15px 50px;
+    white-space: nowrap;
+    transition: all 0.25s;
+    border: 2px solid #000;
+   }
+   a.bannerBtn svg{
+    max-width:32px;
+   }
+   a.bannerBtn svg path{
+    fill:#fff;
+    transition: all 0.25s;
+    }
+    a.bannerBtn:hover{
+      Background: transparent;
+      color: #000;
+    }
+    a.bannerBtn:hover svg path{
+       fill: #000;
+    }
+    .gift-guide-footer{
+      Background:#f5f5f5;
+      padding-block:20px;
+      text-align:center;
+    }
+     .gift-guide-footer p{
+        margin:0;
+        font-size: clamp(16px, 4vw, 22px);
+        line-height: 1.28;
+     }
+     .menuIcon svg{
+      cusrsor:pointer;
+     }
+   @media screen and (min-width:768px){
+     #GiftGuide-{{ section.id }} .container{
+       padding-inline:50px;
+     }
+     .menuIcon{
+      display:none;
+     }
+     .mobileContentWrapper,
+     .mobileView{
+      display:none;
+     }
+   }
+   @media screen and (max-width:767px){
+    .giftBanner {
+          position: relative;
+          display: flex;
+          flex-direction: column-reverse;
+      }
+      .mobileBannerBtnWrap {
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          bottom: 39px;
+      }
+      a.bannerBtn.mobileBtn {
+          padding: 7px 30px;
+          gap: 15px;
+          border-width:1px;
+      }
+      a.bannerBtn svg {
+          max-width: 24px;
+      }
+     .bannerContent{
+        position:relative;
+        padding: 49px 0 16px;
+        align-items: center;
+        text-align:center;
+        gap:24px;
+     }
+     .gift-guide-inner p,
+     .headButtonWrap,
+     a.desktopBtn{
+      display:none;
+     }
+     .gift-guide-inner{
+      padding-block: 23px;
+     }
+     .desktopImg,
+     .desktopView{
+      display:none;
+     }
+    
+   }
+   @media screen and (max-width:480px){
+    .gift-guide-logo>img{
+        max-width:150px;
+     }
+   }
+{% endstyle %}
+
+<section class="gift-guide" id="GiftGuide-{{ section.id }}">
+  <div class="gift-guide-head">
+    <div class="container">
+      <div class="gift-guide-inner">
+        <div class="menuIcon">
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 6H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 1H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1 11H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="gift-guide-logo">
+          <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/Gift_Guide.png?v=1786769817" width="200px" height="25px" alt="logo"
+          >
+        </div>
+        <div>
+          <p>Find the ideal gift for your loved ones.</p>
+        </div>
+        <div class="headButtonWrap">
+          <a href="#" class="headBtn">choose gift 
+            <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="giftBanner">
+    <div class="bannerWrap">
+       <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/hero.png?v=1786769077"
+       width="3840px" height="2080px" class="desktopImg">
+       <div class="mobileContentWrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/mobile-banner.png?v=1786780681"
+           width="375px" height="264px" class="mobileImg">
+          <div class="mobileBannerBtnWrap">
+            <a href="#" class="bannerBtn mobileBtn">Shop Now 
+              <svg width="24" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+    </div>
+       <div class="container">
+        <div class="bannerContent">
+          <h1>The Gift Guide</h1>
+          <p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated
+            selection and find the perfect gifts to delight your loved ones this holiday season.</p>
+          <a href="#" class="bannerBtn desktopBtn">Shop Now 
+            <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+            </svg>
+          </a>
+          </div>
+        </div>
+  </div>
+  <div class="gift-guide-footer">
+    <div class="container">
+      <p class="desktopView">SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>
+      <p class="mobileView">SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+  {% schema %}
+  {
+    "name": "Gift Guide",
+    "tag": "section",
+    "disabled_on": { 
+      "groups": [
+        "header", "footer"
+      ]
+    },
+    "blocks": [
+    ],
+    "settings": [
+      { 
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Background Image"
+      }
+    ],
+    "presets": [
+      {
+       "name": "Gift Guide"
+      }
+    ]
+    
+  }
+  {% endschema %}
