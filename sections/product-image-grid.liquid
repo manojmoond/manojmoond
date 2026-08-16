@@ -1,4 +1,3 @@
-
 {% style %}
     #productImageGrid-{{ section.id }}{
       padding-block-start:{{  section.settings.topPadding }}px;
@@ -50,33 +49,12 @@
     }
     #productImageGrid-{{ section.id }} .productImageGridInner>button span{
     position:absolute;
-    top:50%;
-    left:50%;
     transform:translate(-50%, -50%);
    }
-   @media screen and (min-width:768px){
-     #productImageGrid-{{ section.id }} .container{
-       padding-inline:50px;
-     }
-    }
-    @media screen and (max-width:767px){
-      #productImageGrid-{{ section.id }}{
-        padding-block-start:{{ section.settings.topPadding | times:0.4 }}px;
-        padding-block-end:{{ section.settings.topPadding | times:0.4 }}px;
-      }
-       #productImageGrid-{{ section.id }} .productImageGridInner{
-        grid-template-columns:repeat(2, 1fr);
-        gap:4px;
-      }
-      #productImageGrid-{{ section.id }} h2{
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    }
+
 
     /*Product popup start here*/
-    .productPopup {
+   #productImageGrid-{{ section.id }} .productPopup {
         position: fixed;
         z-index: 999;
         inset: 0;
@@ -84,22 +62,22 @@
         background:rgba(0,0,0,0.5);
         display:none;
     }
-    .productPopup.is-open{
+    #productImageGrid-{{ section.id }} .productPopup.is-open{
       display:flex;
     }
-    .productPopup .productPopupContent {
+   #productImageGrid-{{ section.id }} .productPopup .productPopupContent {
           max-width: 400px;
           position:relative;
           margin: auto;
       }
-      .productPopup .productPopupInner {
+      #productImageGrid-{{ section.id }} .productPopup .productPopupInner {
           background: #fff;
           padding: 20px;
           display: grid;
           grid-template-columns: 2fr 3fr;
           gap: 20px;
       }
-      .productPopup .product-popup-close{ 
+      #productImageGrid-{{ section.id }} .productPopup .product-popup-close{ 
         position:absolute;
         right:10px;
         top:10px;
@@ -107,35 +85,35 @@
         border:none;
         cursor:pointer;
       }
-      .productPopup .productPopupInfo h3{
+      #productImageGrid-{{ section.id }} .productPopup .productPopupInfo h3{
        margin:0;
        font-weight:500;
        font-size:22px;
       }
-       .productPopup .productPopupInfo h5{
+     #productImageGrid-{{ section.id }} .productPopup .productPopupInfo h5{
          margin:0;
         font-size: 20px;
         font-weight: 600;
       }
-       .productPopup .productPopupInfo p{
+      #productImageGrid-{{ section.id }} .productPopup .productPopupInfo p{
             margin:0;
             line-height:1.3;
       }
-    .productPopup .productPopupContent .productPopupImage{
+    #productImageGrid-{{ section.id }} .productPopup .productPopupContent .productPopupImage{
         max-width:250px;
         aspect-ratio:405/460;
           object-fit: cover;
       }
-      .productPopup .productPopupInfo {
+      #productImageGrid-{{ section.id }} .productPopup .productPopupInfo {
           display: flex;
           flex-direction: column;
           gap: 15px; 
           padding-top:15px;
       }
-      .productPopup form{
+      #productImageGrid-{{ section.id }} .productPopup form{
         grid-column: 1 / -1;
       }
-      .productPopup .popupAddCart {
+      #productImageGrid-{{ section.id }} .productPopup .popupAddCart {
         width:100%;
         display: flex; 
         font-weight: 400;
@@ -153,36 +131,36 @@
         justify-content: center;
         cursor:pointer;
       }
-      .productPopup .popupAddCart svg {
+      #productImageGrid-{{ section.id }} .productPopup .popupAddCart svg {
         max-width:26px;
       }
-      .productPopup .popupAddCart svg path{
+      #productImageGrid-{{ section.id }} .productPopup .popupAddCart svg path{
        fill:#fff;
        transition: all 0.25s;
       }
-     .productPopup .popupAddCart:hover {
+     #productImageGrid-{{ section.id }} .productPopup .popupAddCart:hover {
           Background: transparent;
           color: #000;
       }
-      .productPopup .popupAddCart:hover svg path{
+      #productImageGrid-{{ section.id }} .productPopup .popupAddCart:hover svg path{
          fill:#000;
       }
-      .productPopupVariants {
+      #productImageGrid-{{ section.id }} .productPopupVariants {
           display: flex;
           flex-direction: column;
           gap: 15px;
           margin-bottom: 50px;
       }
-      .productPopupOption.Color {
+      #productImageGrid-{{ section.id }} .productPopupOption.Color {
           order: -1;
       }
-      .productPopupOption {
+      #productImageGrid-{{ section.id }} .productPopupOption {
           display: flex;
           flex-direction: column;
           gap: 5px;
           position:relative;
       }
-      .productPopupOption select{
+      #productImageGrid-{{ section.id }} .productPopupOption select{
         padding: 8px 15px;
         appearance: none;
         -webkit-appearance: none;
@@ -190,7 +168,7 @@
         cursor:pointer;
         border-color:#eee;
       }
-      .productPopupOption.Size::after{
+      #productImageGrid-{{ section.id }} .productPopupOption.Size::after{
         content:'';
         position:absolute;
         right:19px;
@@ -201,30 +179,31 @@
         border-bottom:1px solid #000;
         transform:rotate(45deg);
       }
-      .productPopupOption select:focus-visible{
+      #productImageGrid-{{ section.id }} .productPopupOption select:focus-visible{
        outline:none;
       }
-      .colorSwatvhes{
+      #productImageGrid-{{ section.id }} .colorSwatvhes{
         display:grid;
         grid-template-columns:1fr 1fr;
         gap:3px;
       }
-      .colorSwatch{
+      #productImageGrid-{{ section.id }} .colorSwatch{
         position:relative;
         border:1px solid #eee; 
         background:#fff;
         padding:12px 20px;
         cursor:pointer;
+        color:#000;
         width:100%;
       }
-      .colorSwatch:focus-visible{
+      #productImageGrid-{{ section.id }} .colorSwatch:focus-visible{
        outline:none;
       }
-      .colorSwatch.is-selected{
+      #productImageGrid-{{ section.id }} .colorSwatch.is-selected{
         border-color: #000;
         
       }
-      .colorSwatch:after{
+      #productImageGrid-{{ section.id }} .colorSwatch:after{
         content:'';
         position:absolute;
         left:0;
@@ -233,12 +212,31 @@
         height: 100%;
         width: 5px;
       }
-      .colorSwatch[data-option-value="White"]:after{
-        background: #f5f5f5;
-      }
-      .colorSwatch.is-selected{
+      #productImageGrid-{{ section.id }} .colorSwatch.is-selected{
         font-weight:600;
       }
+
+
+      @media screen and (min-width:768px){
+        #productImageGrid-{{ section.id }} .container{
+          padding-inline:50px;
+        }
+        }
+        @media screen and (max-width:767px){
+          #productImageGrid-{{ section.id }}{
+            padding-block-start:{{ section.settings.topPadding | times:0.4 }}px;
+            padding-block-end:{{ section.settings.topPadding | times:0.4 }}px;
+          }
+          #productImageGrid-{{ section.id }} .productImageGridInner{
+            grid-template-columns:repeat(2, 1fr);
+            gap:4px;
+          }
+          #productImageGrid-{{ section.id }} h2{
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+        }
 {% endstyle %}
 
 <div id="productImageGrid-{{ section.id }}">
@@ -252,7 +250,11 @@
             {% assign product = block.settings.product %}
             {% if product != blank %}
                 <button type="button" data-product-popup="ProductPopup-{{ section.id }}-{{ block.id }}">
-                  <span>
+                  {% assign image = product.media[0] %}
+                  {% assign focal = image.presentation.focal_point %}
+                  {% assign focal_x = focal.x | default: 50 %}
+                  {% assign focal_y = focal.y | default: 50 %}
+                  <span style="left:{{ focal_x }}%; top:{{ focal_y }}%">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g filter="url(#filter0_d_5_3060)">
                       <circle cx="11.8571" cy="8.85714" r="7.85714" fill="#F8F8F8" fill-opacity="0.9"/>
@@ -273,6 +275,7 @@
                       </defs>
                       </svg>
                     </span>
+
                   {% if product.featured_image %}
                   {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
                   {% endif %}
@@ -425,195 +428,108 @@
   {% endschema %}
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-     // trigger on product image
-    document.querySelectorAll('.productImageGridInner > button').forEach(trigger => {
-
-      trigger.addEventListener('click', () => {
- 
-        const popupId = trigger.dataset.productPopup;
-        const popup = document.getElementById(popupId);
-
-        if (!popup) return;
-
-        popup.classList.add('is-open');
-        popup.setAttribute('aria-hidden', 'false');
-
-        document.body.style.overflow = 'hidden';
-      });
-
-    });
-// close btn trigger to hide popup
-    document.querySelectorAll('.product-popup-close').forEach(closeButton => {
-
-      closeButton.addEventListener('click', () => {
-
-        const popup = closeButton.closest('.productPopup');
-
-        if (!popup) return;
-
-        popup.classList.remove('is-open');
-        popup.setAttribute('aria-hidden', 'true');
-
-        document.body.style.overflow = '';
-      });
-
-    });
-// body click hide popup
-    document.querySelectorAll('.productPopup').forEach(popup => {
-
-      popup.addEventListener('click', (event) => {
-
-        if (event.target === popup) {
-
-          popup.classList.remove('is-open');
-          popup.setAttribute('aria-hidden', 'true');
-
-          document.body.style.overflow = '';
-        }
-
-      });
-
-    });
-// Escape popup hide
-    document.addEventListener('keydown', (event) => {
-
-      if (event.key === 'Escape') {
-
-        document.querySelectorAll('.productPopup.is-open').forEach(popup => {
-
-          popup.classList.remove('is-open');
-          popup.setAttribute('aria-hidden', 'true');
-
+   document.addEventListener('DOMContentLoaded', () => {
+    // trigger on product image
+    document.querySelectorAll('#productImageGrid-{{ section.id }} .productImageGridInner > button').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const popupId = trigger.dataset.productPopup;
+            const popup = document.getElementById(popupId);
+            if (!popup) return;
+            popup.classList.add('is-open');
+            popup.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
         });
-
-        document.body.style.overflow = '';
-      }
-
     });
-    
+    // close btn trigger to hide popup
+    document.querySelectorAll('#productImageGrid-{{ section.id }} .product-popup-close').forEach(closeButton => {
+        closeButton.addEventListener('click', () => {
+            const popup = closeButton.closest('.productPopup');
+            if (!popup) return;
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+    });
+    // body click hide popup
+    document.querySelectorAll('#productImageGrid-{{ section.id }} .productPopup').forEach(popup => {
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.classList.remove('is-open');
+                popup.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    // Escape popup hide
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            document.querySelectorAll('#productImageGrid-{{ section.id }} .productPopup.is-open').forEach(popup => {
+                popup.classList.remove('is-open');
+                popup.setAttribute('aria-hidden', 'true');
+            });
+            document.body.style.overflow = '';
+        }
+    });
     // Variant selection
-    document.querySelectorAll('.productPopupForm').forEach(form => {
-
+    document.querySelectorAll('#productImageGrid-{{ section.id }} .productPopupForm').forEach(form => {
         const variantData = form.querySelector('[data-product-variants]');
         const variantInput = form.querySelector('input[name="id"]');
-
         if (!variantData || !variantInput) return;
-
         const variants = JSON.parse(variantData.textContent);
 
-
         function updateVariant() {
-
             const selectedOptions = [];
-
             // Get Color button value
-            form.querySelectorAll('.colorSwatch.is-selected').forEach(swatch => {
-
+            form.querySelectorAll('#productImageGrid-{{ section.id }} .colorSwatch.is-selected').forEach(swatch => {
                 const position = Number(swatch.dataset.optionPosition);
-
                 selectedOptions[position - 1] = swatch.dataset.optionValue;
-
             });
-
-
             // Get Size / other select values
             form.querySelectorAll('select[data-option-position]').forEach(select => {
-
                 const position = Number(select.dataset.optionPosition);
-
                 selectedOptions[position - 1] = select.value;
-
             });
-
-
             console.log('Selected options:', selectedOptions);
-
-
             const matchedVariant = variants.find(variant => {
-
                 return variant.options.every((optionValue, index) => {
-
                     return optionValue === selectedOptions[index];
-
                 });
-
             });
-
-
             if (matchedVariant) {
-
                 variantInput.value = matchedVariant.id;
-
                 console.log('Selected variant:', matchedVariant);
                 console.log('Variant ID:', matchedVariant.id);
-
             } else {
-
                 console.log('Variant not found');
-
             }
-
         }
-
         // Color swatch
-
-        form.querySelectorAll('.colorSwatch').forEach(swatch => {
-
+        form.querySelectorAll('#productImageGrid-{{ section.id }} .colorSwatch').forEach(swatch => {
             swatch.addEventListener('click', function() {
-
                 const position = this.dataset.optionPosition;
-
-
                 // Remove selected from same option
-                form.querySelectorAll(
-                    `.colorSwatch[data-option-position="${position}"]`
-                ).forEach(button => {
-
+                form.querySelectorAll(`.colorSwatch[data-option-position="${position}"]`).forEach(button => {
                     button.classList.remove('is-selected');
-
                 });
-
-
                 // Select clicked color
                 this.classList.add('is-selected');
-
-
                 // Find correct Shopify variant
                 updateVariant();
-
             });
-
         });
-
-
         // Select Options
-
         form.querySelectorAll('select[data-option-position]').forEach(select => {
-
             select.addEventListener('change', function() {
-
                 updateVariant();
-
             });
-
         });
-
-
         // Initial color
-
-        const firstColor = form.querySelector('.colorSwatch');
-
+        const firstColor = form.querySelector('#productImageGrid-{{ section.id }} .colorSwatch');
         if (firstColor) {
             firstColor.classList.add('is-selected');
         }
-
-
         // Initial variant
         updateVariant();
-
     });
-
-  });
+});
 </script>

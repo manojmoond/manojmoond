@@ -12,7 +12,19 @@
     "gift_guide_GWTEAm": {
       "type": "gift-guide",
       "name": "Gift Guide",
-      "settings": {}
+      "settings": {
+        "bannerDesktop": "shopify://shop_images/hero.png",
+        "bannerMobile": "shopify://shop_images/mobile-banner.png",
+        "logo": "shopify://shop_images/Gift_Guide.png",
+        "headText": "<p>Find the ideal gift for your loved ones.</p>",
+        "btnText": "choose gift",
+        "bannerHeading": "The Gift Guide",
+        "bannerDesc": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+        "mobileBannerDesc": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
+        "bannerBtnText": "Shop Now",
+        "footerText": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
+        "footerMobileText": "<p>SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>"
+      }
     },
     "product_image_grid_7nrz4U": {
       "type": "product-image-grid",

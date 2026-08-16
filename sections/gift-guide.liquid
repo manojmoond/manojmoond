@@ -8,20 +8,20 @@
      margin-inline:auto;
      position:relative;
    }
-   .gift-guide-head{ 
+    #GiftGuide-{{ section.id }} .gift-guide-head{ 
     Background:#F5F5F5;
    }
-   .gift-guide-inner{
+    #GiftGuide-{{ section.id }} .gift-guide-inner{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-block: 28px;
     gap:20px;
    }
-   .gift-guide-logo>img{
+    #GiftGuide-{{ section.id }} .gift-guide-logo>img{
     max-width:200px;
    }
-   .headBtn{
+    #GiftGuide-{{ section.id }} .headBtn{
     display: flex;
     font-weight: 400;
     font-size: clamp(16px, 2vw, 22px);
@@ -35,28 +35,28 @@
     transition:all 0.25s;
     border:2px solid #FFF544;
    }
-   .headBtn:hover{
+   #GiftGuide-{{ section.id }} .headBtn:hover{
     Background:transparent;
     color:#FFF544;
    }
-  .headBtn:hover svg path{
+   #GiftGuide-{{ section.id }} .headBtn:hover svg path{
      fill:#FFF544;
   }
-   .headBtn svg path{
+    #GiftGuide-{{ section.id }} .headBtn svg path{
       transition:all 0.25s;
    }
-   .headBtn svg{
+    #GiftGuide-{{ section.id }} .headBtn svg{
     max-width:32px;
      
    }
-   .gift-guide-inner p{
+   #GiftGuide-{{ section.id }}  .gift-guide-inner p{
      font-size: clamp(16px, 2vw, 22px);
     line-height: 1.28;
    }
-   .giftBanner{
+    #GiftGuide-{{ section.id }} .giftBanner{
     position:relative;
    }
-   .bannerContent{
+    #GiftGuide-{{ section.id }} .bannerContent{
     display:flex;
     flex-direction:column;
     align-items: start;
@@ -68,22 +68,22 @@
     left:0;
     Background:#fff;
    }
-   .giftBanner .bannerContent h1{
+    #GiftGuide-{{ section.id }} .giftBanner .bannerContent h1{
      font-weight:500;
      font-size:clamp(30px, 5vw, 82px);
      line-height: 1.28;
      margin:0;
    }
-   .giftBanner .bannerContent p{
+    #GiftGuide-{{ section.id }} .giftBanner .bannerContent p{
     margin:0;
     font-size:clamp(16px, 4vw, 22px);
     line-height: 1.28;
    }
-   .bannerBtn{
+    #GiftGuide-{{ section.id }} .bannerBtn{
     display: flex;
     font-weight: 400;
     font-size:clamp(16px, 2vw, 22px);
-   line-height: 1.28;
+    line-height: 1.28;
     text-transform: uppercase;
     align-items: center;
     Background:#000;
@@ -94,58 +94,58 @@
     transition: all 0.25s;
     border: 2px solid #000;
    }
-   .bannerBtn svg{
+    #GiftGuide-{{ section.id }} .bannerBtn svg{
     max-width:32px;
    }
-   .bannerBtn svg path{
+    #GiftGuide-{{ section.id }} .bannerBtn svg path{
     fill:#fff;
     transition: all 0.25s;
     }
-    .bannerBtn:hover{
+     #GiftGuide-{{ section.id }} .bannerBtn:hover{
       Background: transparent;
       color: #000;
     }
-    .bannerBtn:hover svg path{
+     #GiftGuide-{{ section.id }} .bannerBtn:hover svg path{
        fill: #000;
     }
-    .gift-guide-footer{
+     #GiftGuide-{{ section.id }} .gift-guide-footer{
       Background:#f5f5f5;
       padding-block:20px;
       text-align:center;
     }
-     .gift-guide-footer p{
+      #GiftGuide-{{ section.id }} .gift-guide-footer p{
         margin:0;
         font-size: clamp(16px, 4vw, 22px);
         line-height: 1.28;
      }
-     .menuIcon svg{
+      #GiftGuide-{{ section.id }} .menuIcon svg{
       cusrsor:pointer;
      }
    @media screen and (min-width:768px){
      #GiftGuide-{{ section.id }} .container{
        padding-inline:50px;
      }
-     .menuIcon{
+      #GiftGuide-{{ section.id }} .menuIcon{
       display:none;
      }
-     .mobileContentWrapper,
-     .mobileView{
+      #GiftGuide-{{ section.id }} .mobileContentWrapper,
+      #GiftGuide-{{ section.id }} .mobileView{
       display:none;
      }
    }
    @media screen and (min-width:768px) and (max-width:1080px){
-      .bannerContent{
+       #GiftGuide-{{ section.id }} .bannerContent{
         padding-bottom:50px;
         gap:30px;
       }
    }
    @media screen and (max-width:767px){
-    .giftBanner {
+     #GiftGuide-{{ section.id }} .giftBanner {
           position: relative;
           display: flex;
           flex-direction: column-reverse;
       }
-      .mobileBannerBtnWrap {
+       #GiftGuide-{{ section.id }} .mobileBannerBtnWrap {
           position: absolute;
           display: flex;
           width: 100%;
@@ -153,35 +153,35 @@
           justify-content: center;
           bottom: 39px;
       }
-      .bannerBtn.mobileBtn {
+       #GiftGuide-{{ section.id }} .bannerBtn.mobileBtn {
           padding: 7px 30px;
           gap: 15px;
           border-width:1px;
       }
-      .bannerBtn svg {
+       #GiftGuide-{{ section.id }} .bannerBtn svg {
           max-width: 24px;
       }
-     .bannerContent{
+      #GiftGuide-{{ section.id }} .bannerContent{
         position:relative;
         padding: 49px 0 16px;
         align-items: center;
         text-align:center;
         gap:24px;
      }
-     .gift-guide-inner p,{
+      #GiftGuide-{{ section.id }} .gift-guide-inner p,{
       display:none;
      }
-     .gift-guide-inner{
+      #GiftGuide-{{ section.id }} .gift-guide-inner{
       padding-block: 23px;
      }
-     .desktopImg,
-     .desktopView{
+      #GiftGuide-{{ section.id }} .desktopImg,
+      #GiftGuide-{{ section.id }} .desktopView{
       display:none;
      }
     
    }
    @media screen and (max-width:480px){
-    .gift-guide-logo>img{
+     #GiftGuide-{{ section.id }} .gift-guide-logo>img{
         max-width:150px;
      }
    }
@@ -198,62 +198,72 @@
           <path d="M1 11H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <div class="gift-guide-logo">
-          <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/Gift_Guide.png?v=1786769817" width="200px" height="25px" alt="logo"
-          >
-        </div>
-        <div>
-          <p class="desktopView">Find the ideal gift for your loved ones.</p>
-        </div>
-        <div class="desktopView">
-          <a href="#" class="headBtn">choose gift 
-            <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
-            </svg>
-          </a>
-        </div>
+        {% if section.settings.logo != blank %}
+          <div class="gift-guide-logo">
+            {{ section.settings.logo | image_url: width: 200 | image_tag: loading: 'easier', class:'' }}
+          </div>
+        {% endif %}
+        {% if section.settings.headText != blank %}
+          <div><div class="desktopView">{{ section.settings.headText | newline_to_br }}</div></div>
+        {% endif %}
+        {% if section.settings.btnText != blank %}
+          <div class="desktopView">
+            <a href="#" class="headBtn">{{ section.settings.btnText }} 
+              <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+              </svg>
+            </a>
+          </div>
+         {% endif %}
       </div>
     </div>
   </div>
   <div class="giftBanner">
     <div class="bannerWrap">
-       <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/hero.png?v=1786769077"
-       width="3840px" height="2080px" class="desktopImg">
+      {{ section.settings.bannerDesktop | image_url: width: 1920 | image_tag: loading: 'easier', class:'desktopImg' }}
        <div class="mobileContentWrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0828/5365/8841/files/mobile-banner.png?v=1786780681"
-           width="375px" height="264px" class="mobileImg">
-          <div class="mobileBannerBtnWrap">
-            <a href="#" class="bannerBtn mobileBtn">Shop Now 
-              <svg width="24" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
-              </svg>
-            </a>
-          </div>
+         {{ section.settings.bannerMobile | image_url: width: 767 | image_tag: loading: 'easier', class:'mobileImg' }}
+          {% if section.settings.bannerBtnText != blank %}
+            <div class="mobileBannerBtnWrap">
+                <a href="#" class="bannerBtn mobileBtn">{{ section.settings.bannerBtnText }} 
+                  <svg width="24" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+                  </svg>
+                </a>
+              </div>
+          {% endif %}
         </div>
     </div>
        <div class="container">
         <div class="bannerContent">
-          <h1>The Gift Guide</h1>
-          <p class="desktopView">Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated
-            selection and find the perfect gifts to delight your loved ones this holiday season.</p>
-          <p class="mobileView">Discover Joy: Your Ultimate Holiday Gift Destination.</p>
-          <a href="#" class="bannerBtn desktopView">Shop Now 
-            <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
-            </svg>
-          </a>
+          {% if section.settings.bannerHeading != blank %}
+           <h1>{{ section.settings.bannerHeading }}</h1>
+          {% endif %}
+          {% if section.settings.bannerDesc != blank %}
+             <div class="desktopView">{{ section.settings.bannerDesc | newline_to_br }}</div>
+          {% endif %}
+          {% if section.settings.mobileBannerDesc != blank %}
+            <div class="mobileView">{{ section.settings.mobileBannerDesc | newline_to_br }}</div>
+           {% endif %}
+           {% if section.settings.bannerBtnText != blank %}
+            <a href="#" class="bannerBtn desktopView">{{ section.settings.bannerBtnText }} 
+              <svg width="68" height="30" viewBox="0 0 68 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12.7279L1.96701e-07 12.7279L-1.96701e-07 16.7279L2 16.7279L2 12.7279ZM67.4142 16.1421C68.1953 15.3611 68.1953 14.0947 67.4142 13.3137L54.6863 0.585774C53.9052 -0.195275 52.6389 -0.195275 51.8579 0.585774C51.0768 1.36682 51.0768 2.63315 51.8579 3.4142L63.1716 14.7279L51.8579 26.0416C51.0768 26.8227 51.0768 28.089 51.8579 28.87C52.6389 29.6511 53.9052 29.6511 54.6863 28.87L67.4142 16.1421ZM2 16.7279L66 16.7279L66 12.7279L2 12.7279L2 16.7279Z" fill="black"/>
+              </svg>
+            </a>
+           {% endif %}
           </div>
         </div>
   </div>
+  {% if section.settings.footerText != blank or section.settings.footerText != blank %}
   <div class="gift-guide-footer">
     <div class="container">
-      <p class="desktopView">SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>
-      <p class="mobileView">SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>
+      <div class="desktopView">{{ section.settings.footerText | newline_to_br }}</div>
+      <div class="mobileView">{{ section.settings.footerMobileText | newline_to_br }}</div>
     </div>
   </div>
+{% endif %}
 </div>
-
-
 
 
   {% schema %}
@@ -268,10 +278,76 @@
     "blocks": [
     ],
     "settings": [
+      {
+        "type":"header",
+        "content": "Background Image"
+      },
       { 
         "type": "image_picker",
-        "id": "banner",
-        "label": "Background Image"
+        "id": "bannerDesktop",
+        "label": "Desktop"
+      },
+      { 
+        "type": "image_picker",
+        "id": "bannerMobile",
+        "label": "Mobile" 
+      },
+      {
+        "type":"header",
+        "content": "Head"
+      },
+      { 
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo" 
+      },
+      { 
+        "type": "richtext",
+        "id": "headText",
+        "label": "Center text" 
+      },
+      { 
+        "type": "text",
+        "id": "btnText",
+        "label": "Button text" 
+      },
+      {
+        "type":"header",
+        "content": "Banner"
+      },
+      { 
+        "type": "text",
+        "id": "bannerHeading",
+        "label": "Heading" 
+      },
+      { 
+        "type": "richtext",
+        "id": "bannerDesc",
+        "label": "Desktop description" 
+      },
+      { 
+        "type": "richtext",
+        "id": "mobileBannerDesc",
+        "label": "Mobile description" 
+      },
+      { 
+        "type": "text",
+        "id": "bannerBtnText",
+        "label": "Button text" 
+      },
+      {
+        "type":"header",
+        "content": "Footer"
+      },
+      { 
+        "type": "richtext",
+        "id": "footerText",
+        "label": "Desktop text" 
+      },
+      { 
+        "type": "richtext",
+        "id": "footerMobileText",
+        "label": "Mobile text" 
       }
     ],
     "presets": [
